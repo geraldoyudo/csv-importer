@@ -1,3 +1,5 @@
+import json
+
 referenceCSVData = [
     {
         "first": "John",
@@ -16,3 +18,7 @@ referenceCSVData = [
         "pobox": "09119"
     }
 ]
+
+referenceJSONData = []
+for data in referenceCSVData:
+    referenceJSONData.append(json.dumps(data))
