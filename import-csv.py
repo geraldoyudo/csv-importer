@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 from providers.file_csv_reader import FileCSVReader
 from providers.mock_data_store import MockDataStore
