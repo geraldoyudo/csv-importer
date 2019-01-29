@@ -1,4 +1,4 @@
-from csv_reader import CSVReader
+from providers.csv_reader import CSVReader
 import csv
 
 class FileCSVReader(CSVReader):

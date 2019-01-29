@@ -19,7 +19,7 @@ class TestConsoleDataStatsPrinter(unittest.TestCase):
         self.data = DataSaveStats(5, 5)
 
     def test_print(self):
-        self.assert_stdout("Number of records = 5\nNumber of saved records = 5\n")
+        self.assert_stdout("Number of records = 5\nNumber of inserted records = 5\n")
 
 if __name__ == '__main__':
     unittest.main()

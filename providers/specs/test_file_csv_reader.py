@@ -1,10 +1,10 @@
 import unittest
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
-from file_csv_reader import FileCSVReader
-from reference_csv_data import referenceCSVData
+from providers.file_csv_reader import FileCSVReader
+from providers.specs.reference_csv_data import referenceCSVData
 
 class TestFileCSVReader(unittest.TestCase):
     def setUp(self):
