@@ -10,7 +10,6 @@ class SQLiteRecordDataDAO:
         conn = sqlite3.connect(self.db)
         db = conn.cursor()
         # Create table
-        db.execute("drop table record_data")
         db.execute('''create table if not exists record_data
                     (id integer primary key , json text not null)''')
         conn.commit()

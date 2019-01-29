@@ -27,3 +27,6 @@ class SQLiteDataStore(DataStore):
         entityList = self.entityConverter.convertToEntityList(dataList)
         row_count = self.recordDao.save_data_entities(entityList)
         return DataSaveStats(len(dataList), row_count)
+
+    def initialize(self):
+        self.recordDao.intialize_database()

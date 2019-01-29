@@ -2,11 +2,14 @@
 
 import sys
 from providers.file_csv_reader import FileCSVReader
-from providers.mock_data_store import MockDataStore
+from providers.sqlite_data_store import SQLiteDataStore
 from providers.console_data_stats_printer import ConsoleDataStatsPrinter
 
+dbName = "test.db"
+
 csvReader = FileCSVReader()
-dataStore = MockDataStore()
+dataStore = SQLiteDataStore(dbName)
+dataStore.initialize()
 dataStatsPrinter = ConsoleDataStatsPrinter()
 
 csv_file_name = sys.argv[1]
