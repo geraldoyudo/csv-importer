@@ -1,1 +1,1 @@
-docker run -it --rm --name csv-importer gerald_oyudo/csv-importer:1.0.1
+docker run -it --rm --name csv-importer gerald_oyudo/csv-importer:1.0.2
