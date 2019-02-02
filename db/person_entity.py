@@ -1,6 +1,6 @@
 import json
 
-class DataEntity:
+class PersonEntity:
     first = ""
     last = ""
     address = ""

@@ -3,17 +3,17 @@ import os
 import json
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from providers.data_store import DataStore
+from providers.person_store import PersonStore
 from models.data_save_stats import DataSaveStats
-from db.sqlite_record_data_dao import SQLiteRecordDataDAO
-from db.data_entity import DataEntity
+from db.sqlite_person_dao import SQLiteRecordPersonDAO
+from db.person_entity import PersonEntity
     
 class EntityConverter:
     def convertToEntityList(self, dataList):
         entityList = []
         for data in dataList:
             entityList.append(
-                DataEntity(
+                PersonEntity(
                     first = data["first"], 
                     last = data["last"],
                     address = data["address"],
@@ -24,18 +24,18 @@ class EntityConverter:
             )
         return entityList
 
-class SQLiteDataStore(DataStore):
+class SQLitePersonStore(PersonStore):
     db = "test.db"
 
     def __init__(self, db):
         self.db = db
-        self.recordDao = SQLiteRecordDataDAO(self.db)
+        self.recordDao = SQLiteRecordPersonDAO(self.db)
         self.entityConverter = EntityConverter()
         
-    def saveDataList(self, dataList):
-        entityList = self.entityConverter.convertToEntityList(dataList)
-        row_count = self.recordDao.save_data_entities(entityList)
-        return DataSaveStats(len(dataList), row_count)
+    def savePersonList(self, personList):
+        personEntityList = self.entityConverter.convertToEntityList(personList)
+        row_count = self.recordDao.save_data_entities(personEntityList)
+        return DataSaveStats(len(personList), row_count)
 
     def initialize(self):
         self.recordDao.intialize_database()
