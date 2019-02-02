@@ -22,26 +22,26 @@ def convert_to_person(data):
         return INVALID_PERSON
 
 class EntityConverter:
-    def convert_to_entity_list(self, dataList):
-        entityList = []
-        for data in dataList:
-            entityList.append(
+    def convert_to_entity_list(self, data_list):
+        entity_list = []
+        for data in data_list:
+            entity_list.append(
                 convert_to_person(data)
             )
-        return entityList
+        return entity_list
 
 class SQLitePersonStore(PersonStore):
     db = "test.db"
 
     def __init__(self, db):
         self.db = db
-        self.recordDao = SQLiteRecordPersonDAO(self.db)
-        self.entityConverter = EntityConverter()
+        self.person_dao = SQLiteRecordPersonDAO(self.db)
+        self.entity_converter = EntityConverter()
         
-    def save_person_list(self, personList):
-        personEntityList = self.entityConverter.convert_to_entity_list(personList)
-        row_count = self.recordDao.save_data_entities(personEntityList)
-        return DataSaveStats(len(personList), row_count)
+    def save_person_list(self, person_list):
+        person_entity_list = self.entity_converter.convert_to_entity_list(person_list)
+        row_count = self.person_dao.save_data_entities(person_entity_list)
+        return DataSaveStats(len(person_list), row_count)
 
     def initialize(self):
-        self.recordDao.intialize_database()
+        self.person_dao.intialize_database()
