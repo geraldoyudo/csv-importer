@@ -4,7 +4,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 from providers.mock_person_store import MockPersonStore
-from providers.specs.reference_csv_data import referenceCSVData
+from providers.specs.reference_csv_data import reference_csv_data
 
 class TestMockPersonStore(unittest.TestCase):
     def setUp(self):
@@ -12,7 +12,7 @@ class TestMockPersonStore(unittest.TestCase):
         pass
 
     def test_save_person_list(self):
-        data_list_stats = self.person_store.save_person_list(referenceCSVData)
+        data_list_stats = self.person_store.save_person_list(reference_csv_data)
         self.assertEqual(2, data_list_stats.totalRecords)
         self.assertEqual(2, data_list_stats.totalSavedRecords)
 

@@ -1,6 +1,6 @@
 import json
 
-referenceCSVData = [
+reference_csv_data = [
     {
         "first": "John",
         "last": "Doe",
@@ -19,6 +19,6 @@ referenceCSVData = [
     }
 ]
 
-referenceJSONData = []
-for data in referenceCSVData:
-    referenceJSONData.append(json.dumps(data))
+reference_json_data = []
+for data in reference_csv_data:
+    reference_json_data.append(json.dumps(data))

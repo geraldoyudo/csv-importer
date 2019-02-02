@@ -1,6 +1,6 @@
 from providers.data_stats_printer import DataStatsPrinter
 
 class ConsoleDataStatsPrinter(DataStatsPrinter):
-    def print(self, dataSaveStats):
-        print("Number of records = " + str(dataSaveStats.totalRecords))
-        print("Number of inserted records = " + str(dataSaveStats.totalSavedRecords))
+    def print(self, data_save_stats):
+        print("Number of records = " + str(data_save_stats.totalRecords))
+        print("Number of inserted records = " + str(data_save_stats.totalSavedRecords))

@@ -1,1 +1,1 @@
-docker run -it --rm --name my-simple-app gerald_oyudo/simple-app:1.0.0
+docker run -it --rm --name csv-importer gerald_oyudo/csv-importer:1.0.0
