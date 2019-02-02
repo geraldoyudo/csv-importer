@@ -15,3 +15,5 @@ class PersonEntity:
         self.town = town
         self.state = state
         self.zipcode = zipcode
+
+INVALID_PERSON = PersonEntity("###_INVALID_##", "###_INVALID_##", "###_INVALID_##")

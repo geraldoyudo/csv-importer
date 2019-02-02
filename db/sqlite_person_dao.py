@@ -1,4 +1,5 @@
 import sqlite3
+from db.person_entity import INVALID_PERSON
 
 def create_table(db):
     db.execute('''create table if not exists person
@@ -19,6 +20,8 @@ def commit_and_close_connection(connection):
 def convert_person_entity_list_to_tupule_list(person_entity_list):
     data_list = []
     for data in person_entity_list:
+        if data == INVALID_PERSON:
+            continue
         data_list.append(tuple((data.first, data.last, data.address,
         data.town, data.state, data.zipcode)))
     return data_list

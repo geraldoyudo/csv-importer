@@ -6,7 +6,7 @@ from providers.person_store import PersonStore
 from models.data_save_stats import DataSaveStats
 
 class MockPersonStore(PersonStore):
-    def savePersonList(self, personList):
+    def save_person_list(self, personList):
         self.personList = personList
         personListLength = len(personList)
         return DataSaveStats(personListLength, personListLength)

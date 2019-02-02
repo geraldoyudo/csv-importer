@@ -8,13 +8,13 @@ from providers.specs.reference_csv_data import referenceCSVData
 
 class TestMockPersonStore(unittest.TestCase):
     def setUp(self):
-        self.personStore = MockPersonStore()
+        self.person_store = MockPersonStore()
         pass
 
     def test_save_person_list(self):
-        dataListStats = self.personStore.savePersonList(referenceCSVData)
-        self.assertEqual(2, dataListStats.totalRecords)
-        self.assertEqual(2, dataListStats.totalSavedRecords)
+        data_list_stats = self.person_store.save_person_list(referenceCSVData)
+        self.assertEqual(2, data_list_stats.totalRecords)
+        self.assertEqual(2, data_list_stats.totalSavedRecords)
 
 if __name__ == '__main__':
     unittest.main()

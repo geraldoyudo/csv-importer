@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sys
+from providers.csv_reader import CSVReadException
 from providers.file_csv_reader import FileCSVReader
 from providers.sqlite_person_store import SQLitePersonStore
 from providers.console_data_stats_printer import ConsoleDataStatsPrinter
@@ -14,6 +15,13 @@ dataStatsPrinter = ConsoleDataStatsPrinter()
 
 csv_file_name = sys.argv[1]
 
-dataList = csvReader.read(csv_file_name)
-dataStats = dataStore.savePersonList(dataList)
-dataStatsPrinter.print(dataStats)
+try:
+    dataList = csvReader.read(csv_file_name)
+    dataStats = dataStore.save_person_list(dataList)
+    dataStatsPrinter.print(dataStats)
+except CSVReadException as csvReadError: 
+    print(csvReadError)
+except IOError:
+    print("Could not read file: " + csv_file_name)
+except:
+    print("An error has occured")
