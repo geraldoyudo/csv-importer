@@ -14,9 +14,18 @@ class TestSQLiteRecordDataDAO(unittest.TestCase):
 
     def test_save_data_list(self):
         row_count = self.sqliteDao.save_data_entities(
-            list((DataEntity({"name":"gerald"}), DataEntity({"name":"eva"}))
-            ))
-        self.assertEqual(2, row_count)
+            [
+                DataEntity(
+                    first="Gerald", 
+                    last = "Oyudo",
+                    address = "Some address st.",
+                    state = "Lagos",
+                    town = "Okota",
+                    zipcode = "123"
+                )
+            ]
+            )
+        self.assertEqual(1, row_count)
 
 if __name__ == '__main__':
     unittest.main()

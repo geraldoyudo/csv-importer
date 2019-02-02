@@ -1,6 +1,7 @@
 import unittest
 import sys
 import os
+import json
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 from providers.sqlite_data_store import SQLiteDataStore
@@ -16,8 +17,8 @@ class TestSQLiteDataStore(unittest.TestCase):
     def test_entity_conversion(self):
         entityConverter = EntityConverter()
         entityList = entityConverter.convertToEntityList(referenceCSVData)
-        self.assertEqual(entityList[0].entityJson, referenceJSONData[0])
-        self.assertEqual(entityList[1].entityJson, referenceJSONData[1])
+        self.assertEqual(json.dumps(entityList[0].__dict__), referenceJSONData[0])
+        self.assertEqual(json.dumps(entityList[1].__dict__), referenceJSONData[1])
 
     def test_save_data_list(self):
         dataListStats = self.dataStore.saveDataList(referenceCSVData)

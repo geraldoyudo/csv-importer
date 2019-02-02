@@ -12,7 +12,16 @@ class EntityConverter:
     def convertToEntityList(self, dataList):
         entityList = []
         for data in dataList:
-            entityList.append(DataEntity(data))
+            entityList.append(
+                DataEntity(
+                    first = data["first"], 
+                    last = data["last"],
+                    address = data["address"],
+                    state = data["state"],
+                    town = data["town"],
+                    zipcode = data["zipcode"]
+                )
+            )
         return entityList
 
 class SQLiteDataStore(DataStore):

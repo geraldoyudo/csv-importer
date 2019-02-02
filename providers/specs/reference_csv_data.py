@@ -7,7 +7,7 @@ referenceCSVData = [
         "address": "120 jefferson st.",
         "town": "Riverside",
         "state": "NJ",
-        "pobox": "08075",
+        "zipcode": "08075",
     },
     {
         "first": "Jack",
@@ -15,7 +15,7 @@ referenceCSVData = [
         "address": "220 hobo Av.",
         "town": "Phila",
         "state": "PA",
-        "pobox": "09119"
+        "zipcode": "09119"
     }
 ]
 
