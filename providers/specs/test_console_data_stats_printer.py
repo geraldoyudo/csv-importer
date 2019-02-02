@@ -11,11 +11,11 @@ from models.data_save_stats import DataSaveStats
 class TestConsoleDataStatsPrinter(unittest.TestCase):
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_stdout(self, expected_output, mock_stdout):
-        self.dataStatsPrinter.print(self.data)
+        self.data_stats_printer.print(self.data)
         self.assertEqual(expected_output, mock_stdout.getvalue())
 
     def setUp(self):
-        self.dataStatsPrinter = ConsoleDataStatsPrinter()
+        self.data_stats_printer = ConsoleDataStatsPrinter()
         self.data = DataSaveStats(5, 5)
 
     def test_print(self):

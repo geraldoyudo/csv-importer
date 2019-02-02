@@ -2,5 +2,5 @@ import abc
 
 class DataStatsPrinter(abc.ABC):
     @abc.abstractmethod
-    def print(self, dataSaveStats):
+    def print(self, data_save_stats):
         pass
