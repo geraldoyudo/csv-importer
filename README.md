@@ -1,6 +1,7 @@
 # csv-importer
 
-The csv-importer reads entries in a csv file and persists them in an sqlite db. 
+The csv-importer reads entries in a csv file and persists them in an sqlite db. It saves it in a 
+person table in the database.
 
 ## Dependencies
 
@@ -64,4 +65,14 @@ Once a valid csv file has been processed, it outputs the total number of rows, a
 ~~~
 Number of records = 3
 Number of inserted records = 3
+~~~
+
+## Configuring the script
+
+### Changing the name of the database and file
+
+The app writes to a default db called named test.db residing in the root directory of this project. To change the database name, set the value of the CSV_IMPORTER_DB environment variable
+
+~~~
+export CSV_IMPORTER_DB=person.db
 ~~~
