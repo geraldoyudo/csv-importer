@@ -32,6 +32,10 @@ class TestFileCSVReader(unittest.TestCase):
         self.assertRaises(CSVReadException, self.initialize_with_csv_file, "./invalid-header.csv")
         pass
     
+    def test_given_csv_with_invalid_columns_when_read_should_throw_exception(self):
+        self.assertRaises(CSVReadException, self.initialize_with_csv_file, "./invalid-data-type.csv")
+        pass
+    
     def test_given_csv_with_invalid_rows_when_read_should_ignore_invalid_rows(self):
         self.initialize_with_csv_file("/invalid-rows.csv")
         self.assertEqual(2, len(self.data))
