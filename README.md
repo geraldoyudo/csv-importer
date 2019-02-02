@@ -15,7 +15,7 @@ git clone https://github.com/geraldoyudo/csv-importer
 cd csv-importer
 ~~~
 
-== Running the script
+## Running the script
 
 To run type the following
 
@@ -53,13 +53,13 @@ Please note, the first line is for the columns below:
 
 Once a valid csv file has been processed, it outputs the total number of rows, and the number of inserted rows. Invalid rows will be ignored.
 
-== Usage Example
+## Usage Example
 
 ~~~
 ./import-csv.sh sample.csv
 ~~~
 
-=== Output
+### Output
 
 ~~~
 Number of records = 3
